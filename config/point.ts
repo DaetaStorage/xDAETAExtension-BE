@@ -1,0 +1,1 @@
+export const pointsForOneTimeClaim = 0.25;
