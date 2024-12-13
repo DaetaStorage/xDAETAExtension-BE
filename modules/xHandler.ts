@@ -25,6 +25,8 @@ export const getTweetsByUserId = async (userId: string) => {
   try {
     const tweets = await readOnlyClient.v2.userTimeline(userId);
 
+    if (!tweets.data) return null;
+
     return tweets.data.data;
   } catch (error) {
     console.error("Error in getting tweets by user id: ", error);

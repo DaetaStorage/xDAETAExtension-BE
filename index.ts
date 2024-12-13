@@ -1,6 +1,7 @@
 import express from "express";
 import * as dotevnv from "dotenv";
 import cors from "cors";
+import mongoose from "mongoose";
 
 dotevnv.config();
 
@@ -13,6 +14,12 @@ if (!process.env.PORT) {
   console.log(`No port value specified...`);
   process.exit(1);
 }
+
+// Connect Mongo DB
+mongoose
+  .connect(process.env.MONGO_URI as string)
+  .then(() => console.log("DB is connected"))
+  .catch((err) => console.log(err));
 
 const PORT = process.env.PORT || 7005;
 
