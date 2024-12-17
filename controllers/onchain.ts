@@ -20,8 +20,7 @@ export const generateSignature = async (req: Request, res: any) => {
       name: "xExtension",
       version: "1",
       verifyingContract: process.env.EXT_SC,
-      chainId: 11155111,
-      // chainId: 1,
+      chainId: 1,
     };
 
     const types = {
